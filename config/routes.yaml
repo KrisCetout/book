@@ -1,0 +1,47 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+categories:
+    path: /categories
+    controller: App\Controller\CategoryController::index
+
+categories.create:
+    path: /categories/create
+    controller: App\Controller\CategoryController::create
+    
+categories.store:
+    path: /categories/create/show
+    controller: App\Controller\CategoryController::store
+    methods: POST
+    
+categories.show:
+    path: /categories/create/show/{id}
+    controller: App\Controller\CategoryController::show
+    requirements: 
+        id: '\d+'
+
+# Route des book
+
+book:
+    path: /books
+    controller: App\Controller\BookController::index
+    
+book.create:
+    path: /books/create
+    controller: App\Controller\BookController::create
+
+book.store:
+    path: /books/create/show
+    controller: App\Controller\BookController::store
+    methods: POST
+    
+book.show:
+    path: /books/create/show/{id}
+    controller: App\Controller\BookController::show
+    requirements: 
+        id: '\d+'

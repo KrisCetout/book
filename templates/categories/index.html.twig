@@ -1,0 +1,20 @@
+{# On inclut le layout #} 
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles du blog{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des Catégories</h1>
+    
+    <ul>
+        {% for category in categories %}
+            <article>
+                <header>
+                    <h2><a href="{{ path('categories.show', {id: category.id}) }}">{{ category.title }}</a></h2>
+                </header>
+            </article>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

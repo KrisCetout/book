@@ -1,0 +1,30 @@
+{# On inclut le layout #} 
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un nouvel article{% endblock %}
+
+{% block content %}
+
+    <h1>Ajouter un livre</h1>
+    
+    <form method="post" action="{{ path('book.store') }}">
+        <div class="form-group">
+            <label for="title">Titre du livre</label>
+            <input class="form-control" id="title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="category">Catégorie</label>
+            <select class="form-control" id="category" name="category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title">Résumé du livre</label>
+            <input class="form-control" id="overview" name="overview">
+        </div>
+        <button class="btn btn-primary">Ajouter</button>
+    </form>
+
+{% endblock %}

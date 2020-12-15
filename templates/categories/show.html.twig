@@ -1,0 +1,12 @@
+{# On inclut le layout #} 
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.title }}{% endblock %}
+
+{% block content %}
+
+    <article>
+        <h1>{{ category.title }}</h1>
+    </article>
+
+{% endblock %}

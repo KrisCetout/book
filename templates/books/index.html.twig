@@ -1,0 +1,20 @@
+{# On inclut le layout #} 
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles du blog{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des Livres</h1>
+    
+    <ul>
+        {% for book in books %}
+            <article>
+                <header>
+                    <h2><a href="{{ path('book.show', {id: book.id}) }}">{{ book.title }}</a></h2>
+                </header>
+            </article>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
